@@ -1,39 +1,23 @@
 const express = require('express')
 const Booking = require('../models/Booking')
 const Experiences = require('../models/Experience')
+const { createBooking, getBookings, getBooking, deleteBooking, updateBooking } = require('../controllers/bookingController')
 
 const router = express.Router()
 
 // get all of the bookings
-router.get('/', (req, res) => {
-    res.json({msg: 'GET all bookings'})
-})
+router.get('/', getBookings)
 
 // get a single booking
-router.get('/:id', (req,res) => {
-    res.json({msg: 'GET a single booking'})
-})
+router.get('/:id', getBooking)
 
 // post a new booking
-router.post('/', async (req,res) => {
-    const {title, load, reps} = req.body
-
-    try {
-        const workout = await Booking.create(title, load, reps)
-        res.status(200).json(workout)
-    } catch (error) {
-        res.status(400),json({error: error.message})
-    }
-})
+router.post('/', createBooking)
 
 // delete a booking
-router.delete('/:id', (req,res) => {
-    res.json({msg: 'DELETE a booking'})
-})
+router.delete('/:id', deleteBooking)
 
 // update a booking
-router.patch('/:id', (req,res) => {
-    res.json({msg: 'UPDATE a booking'})
-})
+router.patch('/:id', updateBooking)
 
 module.exports = router

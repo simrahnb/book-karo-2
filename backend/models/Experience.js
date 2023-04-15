@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema // function to create new schema
 
-const bookingSchema = new Schema({
+const experienceSchema = new Schema({
     title: {
         type: String, 
         required: true
@@ -57,3 +57,6 @@ const bookingSchema = new Schema({
     }
 
 }, { timestamps: true } )
+
+
+module.exports = mongoose.model('Experience', experienceSchema)
