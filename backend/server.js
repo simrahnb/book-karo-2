@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express = require('express')
+const mongoose = require('mongoose')
 const bookingsRoutes = require('./routes/bookings')
 const experiencesRoutes = require('./routes/experiences')
 
@@ -18,8 +19,16 @@ app.use((req, res, next) => {
 app.use('/api/bookings', bookingsRoutes)
 app.use('/api/experiences', experiencesRoutes)
 
-// listen on port number for requests
-app.listen(process.env.PORT, () => {
-    console.log("Listening on Port 4000!")
-})
+// connect to db
+mongoose.connect(process.env.MONGO_URI) // async 
+    .then(() => {
+        // listen on port number for requests
+        app.listen(process.env.PORT, () => {
+            console.log("Connecting to db and istening on Port 4000!")
+        })
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+
 
