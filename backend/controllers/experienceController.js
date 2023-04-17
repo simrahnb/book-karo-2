@@ -27,14 +27,22 @@ const getExperience = async (req, res) => {
 
 // create new experience
 const createExperience = async (req, res) => {
-    const {title, subtitle, description, experienceType, totalSpots} = req.body
+    const {title, subtitle, description, experienceType, totalSpots, length, schedule, location, priceSetup, currency, serviceFee, cancellationPolicy } = req.body
 
     const newExperience={
         title: req.body.title,
         subtitle: req.body.subtitle,
         description: req.body.description,
         experienceType: req.body.experienceType,
-        totalSpots: req.body.totalSpots
+        totalSpots: req.body.totalSpots,
+        length: req.body.length,
+        schedule: req.body.schedule,
+        location: req.body.location,
+        priceSetup: req.body.priceSetup,
+        currency: req.body.currency,
+        serviceFee: req.body.serviceFee,
+        cancellationPolicy: req.body.cancellationPolicy
+
      };
 
     // add doc to db

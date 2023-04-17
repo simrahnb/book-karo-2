@@ -25,36 +25,39 @@ const experienceSchema = new Schema({
         min: 1,
         max: 25000,
         required: true
-    }
-    //length: {
-    //   type: Number,
-    //    required: true
-    //},
-    //schedule: {
-    //    type: [Date]
-    //},
-    //location: {
-    //    type: String,
-    //    required: true
-    //},
-    //priceSetup: {
-    //    type: Boolean,
-    //    default: false,
-    //    required: true
-    //},
-    //currency: {
-    //   type: String
-    //},
+    },
+    length: {
+        type: String,
+        required: true
+    },
+    schedule: {
+       type: [Date],
+       required: true
+    },
+    location: {
+        type: String,
+        required: true
+    },
+    priceSetup: {
+        type: Boolean,
+        default: false,
+        required: true
+    },
+    currency: {
+       type: String
+    },
     //tickets: {
     //    type: Schema.Types.Mixed
     //},
-    //servicefee: {
-    //    type: Boolean,
-    //    default: false
-    //},
-    //cancellationPolicy: {
-    //    type: String
-    //}
+    serviceFee: {
+        type: Boolean,
+        default: false,
+        required: true
+    },
+    cancellationPolicy: {
+        type: String,
+        required: true
+    }
 
 }, { timestamps: true } )
 
