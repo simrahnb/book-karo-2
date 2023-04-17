@@ -1,31 +1,22 @@
 const express = require('express')
+const { createExperience, getExperiences, getExperience, deleteExperience, updateExperience } = require('../controllers/experienceController')
 
 const router = express.Router()
 
 // get all of the experiences
-router.get('/', (req, res) => {
-    res.json({msg: 'GET all experiences'})
-})
+router.get('/', getExperiences)
 
 // get a single experience
-router.get('/:id', (req,res) => {
-    res.json({msg: 'GET a single experience'})
-})
+router.get('/:id', getExperience)
 
 // post a new experience
-router.post('/', (req,res) => {
-    res.json({msg: 'POST a new experience'})
-})
+router.post('/', createExperience)
 
 // delete a experience
-router.delete('/:id', (req,res) => {
-    res.json({msg: 'DELETE a experience'})
-})
+router.delete('/:id', deleteExperience)
 
 // update a experience
-router.patch('/:id', (req,res) => {
-    res.json({msg: 'UPDATE a experience'})
-})
+router.patch('/:id', updateExperience)
 
 
 module.exports = router
