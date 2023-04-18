@@ -1,6 +1,35 @@
 const mongoose = require('mongoose')
+const Booking = require('../models/Booking')
 
 const Schema = mongoose.Schema // function to create new schema
+
+const bs = new Schema({
+    experienceTitle: {
+        type: String,
+        required: true
+    },
+    experience: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Experience"
+    }
+
+ //   affiliate: {
+ //       type: mongoose.Schema.Types.ObjectId, ref: 'Experience' ,
+ //   },
+ //   numberofguests: {
+ //       type: Number,
+ //       required: true,
+ //   },
+ //   startDate: {
+ //      type: Date,
+ //        required: true
+ //   },
+ //   startTime: {
+ //       type: Date,
+ //       required: true
+ //   }
+
+}, { timestamps: true }) // when created and updated
 
 const experienceSchema = new Schema({
     title: {
@@ -28,20 +57,20 @@ const experienceSchema = new Schema({
     },
     length: {
         type: String,
-        required: true
+        //required: true
     },
     schedule: {
        type: [Date],
-       required: true
+       //required: true
     },
     location: {
         type: String,
-        required: true
+        //required: true
     },
     priceSetup: {
         type: Boolean,
         default: false,
-        required: true
+        //required: true
     },
     currency: {
        type: String
@@ -52,13 +81,14 @@ const experienceSchema = new Schema({
     serviceFee: {
         type: Boolean,
         default: false,
-        required: true
+        //required: true
     },
     cancellationPolicy: {
         type: String,
-        required: true
-    }
-
+        //required: true
+    },
+    // array of bookings for an experience
+    bookings: [bs],
 }, { timestamps: true } )
 
 

@@ -3,24 +3,26 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema // function to create new schema
 
 const bookingSchema = new Schema({
-    experience: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'Experience' ,
+    experienceTitle: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Experience'
+ ,
     },
-    affiliate: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'Experience' ,
-    },
-    numberofguests: {
-        type: Number,
-        required: true,
-    },
-    startDate: {
-        type: Date,
-        required: true
-    },
-    startTime: {
-        type: Date,
-        required: true
-    }
+ //   affiliate: {
+ //       type: mongoose.Schema.Types.ObjectId, ref: 'Experience' ,
+ //   },
+ //   numberofguests: {
+ //       type: Number,
+ //       required: true,
+ //   },
+ //   startDate: {
+ //      type: Date,
+ //        required: true
+ //   },
+ //   startTime: {
+ //       type: Date,
+ //       required: true
+ //   }
 
 }, { timestamps: true }) // when created and updated
 
