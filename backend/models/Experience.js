@@ -57,20 +57,20 @@ const experienceSchema = new Schema({
     },
     length: {
         type: String,
-        //required: true
+        required: true
     },
     schedule: {
        type: [Date],
-       //required: true
+       required: true
     },
     location: {
         type: String,
-        //required: true
+        required: true
     },
     priceSetup: {
         type: Boolean,
         default: false,
-        //required: true
+        required: true
     },
     currency: {
        type: String
@@ -81,11 +81,11 @@ const experienceSchema = new Schema({
     serviceFee: {
         type: Boolean,
         default: false,
-        //required: true
+        required: true
     },
     cancellationPolicy: {
         type: String,
-        //required: true
+        required: true
     },
     // array of bookings for an experience
     bookings: [bs],
