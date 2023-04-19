@@ -73,7 +73,8 @@ const experienceSchema = new Schema({
         required: true
     },
     currency: {
-       type: String
+       type: String,
+       required: true
     },
     //tickets: {
     //    type: Schema.Types.Mixed

@@ -149,7 +149,7 @@ const updateBooking = async (req, res) => {
                 "bookings.$.experienceTitle": req.body.experienceTitle
             }
             
-        },
+        },hbb
     );
 
     console.log(finalupdatedBooking)
