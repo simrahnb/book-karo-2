@@ -16,7 +16,7 @@ function App() {
         <div className="pages">
           <Routes>
             <Route 
-              path="/"
+              path="/dashboard"
               element={<Dashboard />}
             />
             <Route
