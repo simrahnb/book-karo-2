@@ -1,5 +1,4 @@
 const express = require('express')
-const Booking = require('../models/Booking')
 const Experiences = require('../models/Experience')
 const { createBooking, getBookings, getBooking, deleteBooking, updateBooking } = require('../controllers/bookingController')
 

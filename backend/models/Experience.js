@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const Booking = require('../models/Booking')
 
 const Schema = mongoose.Schema // function to create new schema
 

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Dashboard from './pages/Dashboard';
 import Sidebar from './components/Sidebar';
 import ExperienceDetails from './pages/ExperienceDetails';
+import BookingDetails from './pages/BookingDetails';
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
             <Route
               path="/experiences"
               element={<ExperienceDetails />}
+            />
+            <Route
+              path="/bookings"
+              element={<BookingDetails />}
             />
           </Routes>
         </div>

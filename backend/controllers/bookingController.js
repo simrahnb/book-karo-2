@@ -1,4 +1,3 @@
-const Booking = require('../models/Booking')
 const Experience = require('../models/Experience')
 const mongoose = require('mongoose')
 
