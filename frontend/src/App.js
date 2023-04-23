@@ -5,8 +5,13 @@ import Dashboard from './pages/Dashboard';
 import Sidebar from './components/Sidebar';
 import ExperienceDetails from './pages/ExperienceDetails';
 import BookingDetails from './pages/BookingDetails';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
+  const { user } = useAuthContext() // to check if we have user or not
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -28,6 +33,15 @@ function App() {
               path="/bookings"
               element={<BookingDetails />}
             />
+            <Route
+              path="/login"
+              element={<Login />}
+            />
+            <Route
+              path="/signup"
+              element={<Signup />}
+            />
+            
           </Routes>
         </div>
         </div>
