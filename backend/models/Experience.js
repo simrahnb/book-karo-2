@@ -87,6 +87,10 @@ const experienceSchema = new Schema({
         type: String,
         required: true
     },
+    user_id: {
+        type: String,
+        required: true
+    },
     // array of bookings for an experience
     bookings: [bs],
 }, { timestamps: true } )

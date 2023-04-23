@@ -13,6 +13,10 @@ export const useLogout = () => {
 
     }
 
+    // clear experiences & bookings 
+    // import useExperienceContext 
+    // const { dispatch: workoutsDispatch } = useExperiencesContext()
+    // workoutsDispatch({ type: 'SET_EXPERIENCES', payload: null})
     return {logout}
 
 }
