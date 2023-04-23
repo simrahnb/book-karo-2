@@ -1,6 +1,13 @@
 const Experience = require('../models/Experience')
 const mongoose = require('mongoose')
 
+const requireAuth = require('../middleware/requireAuth')
+
+const router = express.Router()
+
+// require auth for all experience routes
+router.use(requireAuth)
+
 // get all experiences
 const getExperiences = async (req, res) => {
     const experiences = await Experience.find({}).sort({createdAt: -1})

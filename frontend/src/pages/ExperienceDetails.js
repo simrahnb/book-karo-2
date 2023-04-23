@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Experiences = ({ experience }) => {
 
@@ -50,6 +51,7 @@ const Experiences = ({ experience }) => {
 
 const ExperienceDetails = () => {
   const [experiences, setExperiences] = useState(null);
+  const { user } = useAuthContext()
 
   useEffect(() => {
     const fetchExperiences = async () => {
@@ -61,8 +63,10 @@ const ExperienceDetails = () => {
       }
     };
 
+    if (user) {
     fetchExperiences();
-  }, []);
+    }
+  }, [user]);
 
   return (
     <div className="experiences">
